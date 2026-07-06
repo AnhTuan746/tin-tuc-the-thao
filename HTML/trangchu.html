@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thế Giới Bóng Rổ - Trang Chủ</title>
+    <title>Thế Giới Bóng Rổ - Trang Chủ</title>`
     <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
@@ -11,37 +11,32 @@
         <p>Cập nhật tin tức, lịch thi đấu và bảng xếp hạng nhanh nhất</p>
     </header>
 
-    <!-- Thanh Menu Điều Hướng -->
     <nav>
         <a href="trangchu.html" class="active">Trang Chủ</a>
         <a href="nba.html">Tin Tức NBA</a>
         <a href="lichdau.html">Lịch Đấu</a>
         <a href="bangxephang.html">Bảng Xếp Hạng</a>
-       
+
     </nav>
 
-    <!-- HÌNH ẢNH BANNER LỚN CHUYÊN NGHIỆP -->
     <div class="hero-banner">
         <h2>Chặng Đường Đến Vòng Playoffs 2026</h2>
         <p>Nơi những huyền thoại tỏa sáng và những giấc mơ chạm tới đỉnh vinh quang</p>
     </div>
 
     <div class="container">
-        <!-- Cột trái: Vùng tin tức chính -->
         <main class="main-content">
             <h2 class="section-title">🔥 Tin Nổi Bật Vừa Cập Nhật</h2>
             <div class="news-list">
                 
-                <!-- Bài viết 1 -->
                 <div class="news-item-flex">
-                    <img src="https://images.unsplash.com/photo-1519766304817-4f37bda74a27?q=80&w=400&auto=format&fit=crop" alt="Stephen Curry" class="news-thumb">
+                    <img src="https://www.nba.com/player/201939/stephen-curry" alt="Stephen Curry" class="news-thumb">
                     <div class="news-info">
                         <h3><a href="detail.html">Stephen Curry phá vỡ kỷ lục ném 3 điểm mọi thời đại</a></h3>
                         <p>Ngôi sao của Golden State Warriors tiếp tục khẳng định vị thế tay ném vĩ đại nhất lịch sử NBA sau trận đấu kịch tính sáng nay...</p>
                     </div>
                 </div>
 
-                <!-- Bài viết 2 -->
                 <div class="news-item-flex">
                     <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=400&auto=format&fit=crop" alt="Saigon Heat" class="news-thumb">
                     <div class="news-info">
@@ -53,7 +48,6 @@
             
             <br><br>
 
-            <!-- Ý 2: Vùng Lịch đấu tâm điểm có tích hợp hộp đếm ngược thời gian thực -->
             <h2 class="section-title">📅 Trận Đấu Tâm Điểm Tuần Này</h2>
             <div class="news-list">
                 <div class="news-item-flex">
@@ -61,26 +55,13 @@
                     <div class="news-info">
                         <h3><a href="#">Los Angeles Lakers vs Golden State Warriors</a></h3>
                         <p><b>Thời gian:</b> 08:00 AM - Chủ Nhật, 15/07/2026</p>
-                        
-                        <!-- Khung đếm ngược động từ JavaScript -->
-                        <p style="color: #ff6600; font-weight: bold; margin: 8px 0; font-size: 1.05rem;">
-                            ⏳ Đếm ngược trận đấu: <span id="countdown-timer" style="color: #ff0000;">Đang tính toán...</span>
-                        </p>
-                        
                         <p>Trận thư hùng rực lửa khu vực miền Tây giữa hai thế lực đầy duyên nợ. Vé hiện đang được săn lùng trên mọi nền tảng điện tử.</p>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Cột phải: Sidebar chứa công cụ tìm kiếm và phân vùng chủ đề -->
         <aside class="sidebar">
-            <!-- Ý 1: Thanh Tìm kiếm bài viết bằng JS -->
-            <div style="margin-bottom: 30px;">
-                <h2 class="section-title">Tìm Kiếm Tin Tức</h2>
-                <input type="text" id="searchKey" onkeyup="timKiemTinTuc()" placeholder="Nhập từ khóa (Ví dụ: Curry, Heat)...">
-            </div>
-
             <h2 class="section-title">Các Chủ Đề</h2>
             <ul class="category-list">
                 <li><a href="nba.html">Bóng rổ Quốc tế (NBA)</a></li>
@@ -104,9 +85,6 @@
     <footer>
         <p>&copy; 2026 Thế Giới Bóng Rổ - AnhTuan@</p>
     </footer>
-
-    <!-- Ý 3: Nhúng file script xử lý logic trước thẻ đóng body -->
-    <script src="script.js"></script>
-    </body>
+    
+</body>
 </html>
-
