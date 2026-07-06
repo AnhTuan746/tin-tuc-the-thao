@@ -1,0 +1,407 @@
+/* ==========================================================================
+   1. ĐỊNH DẠNG CHUNG & BIẾN HỆ THỐNG (VARIABLES)
+   ========================================================================== */
+:root {
+    --primary-color: #ff6600;    /* Màu cam quả bóng rổ */
+    --primary-dark: #cc5200;     /* Màu cam đậm khi hover */
+    --dark-color: #111111;       /* Màu đen charcoal chủ đạo */
+    --light-bg: #f8f9fa;         /* Màu nền xám nhạt nhẹ nhàng */
+    --white: #ffffff;            /* Màu trắng tinh khiết */
+    --text-color: #333333;       /* Màu chữ chính */
+    --text-muted: #777777;       /* Màu chữ phụ, mờ */
+    --border-color: #e0e0e0;     /* Màu đường viền */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Đổ bóng hiện đại */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   2. BỐ CỤC CHÍNH (HEADER, NAVIGATION & FOOTER)
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--dark-color), #222);
+    color: var(--white);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Thanh Menu Điều Hướng */
+nav {
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav a {
+    color: var(--white);
+    padding: 15px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Footer chung */
+footer {
+    background-color: var(--dark-color);
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* ==========================================================================
+   3. CẤU TRÚC CHIA CỘT FLEXBOX (DÙNG CHO INDEX, DETAIL, NBA)
+   ========================================================================== */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+.main-content {
+    flex: 7; /* Chiếm 70% không gian */
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.sidebar {
+    flex: 3; /* Chiếm 30% không gian */
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+/* Tiêu đề vùng lớn */
+h2.section-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   4. COMPONENT: TIN TỨC & BÀI VIẾT (DANH SÁCH + CHI TIẾT)
+   ========================================================================== */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.news-item h3 a {
+    color: var(--dark-color);
+}
+
+.news-item h3 a:hover {
+    color: var(--primary-color);
+}
+
+.news-item p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Chi tiết bài viết */
+.article-header h1 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.article-body p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* Khối link liên quan 'Hot' */
+.related-box {
+    background-color: #fff9f5;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.related-box h4 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.related-box ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+.related-box ul li {
+    margin-bottom: 8px;
+}
+
+/* Danh mục bên Sidebar */
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.category-list li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    display: block;
+}
+
+.category-list li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+/* ==========================================================================
+   5. COMPONENT: KHU VỰC BÌNH LUẬN DÂN DỤNG (COMMENTS)
+   ========================================================================== */
+.comment-section {
+    margin-top: 40px;
+}
+
+.comment-list {
+    margin: 20px 0;
+}
+
+.comment-item {
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border-left: 3px solid #ccc;
+}
+
+.comment-item.new-comment {
+    background-color: #e6f7ff;
+    border-left-color: var(--primary-color);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   6. COMPONENT: FORM & NÚT BẤM (ĐĂNG NHẬP & BÌNH LUẬN)
+   ========================================================================== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+input[type="text"], 
+input[type="password"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--white);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.2);
+}
+
+button, input[type="button"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Hộp đăng nhập chuyên biệt (Trang login.html) */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.login-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary-color);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+}
+
+/* ==========================================================================
+   7. COMPONENT: SƠ ĐỒ TRANG (SITEMAP)
+   ========================================================================== */
+.sitemap-tree {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sitemap-tree li {
+    margin: 15px 0;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.sitemap-tree ul {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 10px;
+    border-left: 2px dashed var(--border-color);
+}
+
+.sitemap-tree ul li {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+.sitemap-tree ul li::before {
+    content: "— ";
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* ==========================================================================
+   8. TƯƠNG THÍCH ĐIỆN THOẠI (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Chuyển thành 1 cột đứng trên mobile */
+        gap: 20px;
+    }
+    
+    .main-content, .sidebar {
+        flex: none;
+        width: 100%;
+    }
+    
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav a {
+        border-bottom: 1px solid #222;
+        padding: 12px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
